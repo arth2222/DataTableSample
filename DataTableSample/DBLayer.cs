@@ -18,7 +18,7 @@ namespace DataTableSample
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Larer", conn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Person", conn);
                 cmd.CommandType = CommandType.Text;
                 SqlDataReader reader = cmd.ExecuteReader();
 
@@ -39,7 +39,7 @@ namespace DataTableSample
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Larer where navn=@name", conn);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM person where navn=@name", conn);
                 cmd.CommandType = CommandType.Text;
 
                 //params here
