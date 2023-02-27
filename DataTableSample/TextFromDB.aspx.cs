@@ -16,6 +16,7 @@ namespace DataTableSample
         {
             //Labelens tekst får det som metoden returnerer. Dvs det som ligger i tabellen.
             LabelTextFromDB.Text = GetTextFromDB();
+            LabelParagraf1.Text = GetTextFromParagraf1();
         }
 
         /// <summary>
@@ -43,6 +44,34 @@ namespace DataTableSample
                 conn.Close();
             }
             return textFromDB;
+        }
+
+        public string GetTextFromParagraf1()
+        {
+            var connectionString = ConfigurationManager.ConnectionStrings["ConnCms"].ConnectionString;
+            string textFromDB = "";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand("SELECT Paragraf1 FROM TextTable", conn);
+                cmd.CommandType = CommandType.Text;
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    textFromDB = (string)reader[0];
+                }
+
+                reader.Close();
+                conn.Close();
+            }
+            return textFromDB;
+        }
+
+        protected void ButtonSave_Click(object sender, EventArgs e)
+        {
+            //todo kode for insert
         }
     }
 }
