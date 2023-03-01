@@ -9,6 +9,9 @@
 <body>
     <form id="form1" runat="server">
         <div>
+
+            <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+
             Denne fylles med data fra en DataTable
             <br />
             <br />

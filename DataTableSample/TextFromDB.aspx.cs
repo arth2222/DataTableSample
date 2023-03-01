@@ -17,6 +17,15 @@ namespace DataTableSample
             //Labelens tekst får det som metoden returnerer. Dvs det som ligger i tabellen.
             LabelTextFromDB.Text = GetTextFromDB();
             LabelParagraf1.Text = GetTextFromParagraf1();
+            bool loggedIn = true;
+
+            if(loggedIn)//hack, men du skjønner  vel at du må bruke ekte login her....
+            {
+                TextBoxEditOnPage.Visible = true;
+                TextBoxEditOnPage.Text = GetTextFromDB();//henter text fra db, det som er nå, inn til textbox
+                ButtonEdit.Visible = true;
+                //husk å ha en knapp for UPDATE
+            }
         }
 
         /// <summary>
@@ -72,6 +81,11 @@ namespace DataTableSample
         protected void ButtonSave_Click(object sender, EventArgs e)
         {
             //todo kode for insert
+        }
+
+        protected void ButtonEdit_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

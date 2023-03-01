@@ -56,5 +56,36 @@ namespace DataTableSample
             }
             return dt;
         }
+
+        /// <summary>BrendonStuff
+        /// Updatetes one col.Text is the param that is stored in db
+        /// </summary>
+        /// <param name="text"></param>
+        public void UpdateText(string text,string slot)
+        {
+            SqlParameter param;
+            var connectionString = ConfigurationManager.ConnectionStrings["ConnAir"].ConnectionString;
+            DataTable dt = new DataTable();
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                
+                SqlCommand cmd = new SqlCommand("UPDATE YourTable SET [" + slot +"]=@param where id=1", conn);
+                cmd.CommandType = CommandType.Text;
+
+                //params here
+                param = new SqlParameter("@param", SqlDbType.NVarChar);
+                param.Value = text;
+                cmd.Parameters.Add(param);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                dt.Load(reader);
+
+                reader.Close();
+                conn.Close();
+            }
+        }
     }
 }

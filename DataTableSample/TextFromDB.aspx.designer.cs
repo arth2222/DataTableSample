@@ -42,6 +42,24 @@ namespace DataTableSample
         protected global::System.Web.UI.WebControls.Label LabelParagraf1;
 
         /// <summary>
+        /// TextBoxEditOnPage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBoxEditOnPage;
+
+        /// <summary>
+        /// ButtonEdit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonEdit;
+
+        /// <summary>
         /// TextBoxEdit control.
         /// </summary>
         /// <remarks>

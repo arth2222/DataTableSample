@@ -15,6 +15,18 @@ namespace DataTableSample
         protected void Page_Load(object sender, EventArgs e)
         {
             BindGrid();
+            BindDropDown();
+            //select dropdown
+            DropDownList1.SelectedValue = "2";
+        }
+
+        public void BindDropDown()
+        {
+            DropDownList1.Items.Add("1");
+            DropDownList1.Items.Add("2");
+            DropDownList1.Items.Add("3");
+            DropDownList1.Items.Add("4");
+            DropDownList1.Items.Add("5");
         }
 
         /// <summary>
